@@ -1,0 +1,18 @@
+app.get("/restaurants", (request, response) => {
+  //SELECT * FROM restaurants
+  const restaurants = [{ name: "Da Pippo" }, { name: "DatPluto" }];
+  return response.json(restaurants);
+});
+
+app.get("/restaurants/:restaurantId", (request, response) => {
+  // SELECT * FROM restaurant WHERE id = 'restaurantId'
+  console.log(request.params);
+  return response.json({
+    id: "abcd",
+    name: "Da pinco"
+  });
+});
+
+app.listen(port, () => {
+  console.log("Server listening on port " + port);
+});
